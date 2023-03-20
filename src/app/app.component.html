@@ -1,0 +1,67 @@
+<div class="login" *ngIf="isLogin">
+  <nz-layout class="layout">
+    <nz-header style= "display: flex;justify-content: center">
+      <h1 class="title">Cookies</h1>
+      </nz-header>
+      </nz-layout>
+  <div class="form1">
+    <div class="form3">
+        <form>
+            <div class="f1">
+                <div class="input2">
+                 <input type="password" placeholder="Enter your password" class="input" (keyup)="enable()" [(ngModel)]="password" name="userid" >
+            </div>
+            <div class="buttons">
+                <button nz-button="isdisabled" class="next" (click)="toggleLogin()">Submit <i nz-icon nzType="right"></i></button>
+            </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+</div>
+<div class="note" *ngIf="!isLogin">
+<nz-layout class="layout">
+  <nz-header>
+    <div nz-row>
+      <div nz-col nzSpan="12">
+        <div nz-row>
+          <div nz-col nzSpan="6">
+            <h1 class="title">Cookies</h1>
+          </div>
+          <div nz-col nzSpan="18">
+            <ng-template #suffixIconSearch>
+              <i nz-icon nzType="search"></i>
+            </ng-template>
+            <nz-input-group [nzPrefix]="suffixIconSearch">
+              <input type="text" nz-input placeholder="Search" />
+            </nz-input-group>
+          </div>
+        </div>
+      </div>
+      <div nz-col nzSpan="12">
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+          <li nz-menu-item nzSelected>
+            <a routerLink="/home">Home</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="/recipes">Recipes</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="/contact">Contact</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="/about">About</a>
+          </li>
+          <li nz-menu-item>
+            <a routerLink="/tutorial">Tutorial</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nz-header>
+</nz-layout>
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+</div>

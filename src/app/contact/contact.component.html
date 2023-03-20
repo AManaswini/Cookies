@@ -1,0 +1,39 @@
+<div class="header">
+    <h1>Contact Us!</h1>
+    <div class="subtext">
+        If you’d like to contact us, please fill out the form below.
+        Reminder that this system is in the beta stage of production and there will be mistakes.
+    </div>
+</div>
+
+
+
+<div class="form">
+    <form nz-form>
+        <nz-form-item>
+          <nz-form-label [nzSpan]="6" nzFor="name">Name</nz-form-label>
+          <nz-form-control [nzSpan]="14">
+            <input nz-input name="name">
+          </nz-form-control>
+        </nz-form-item >
+        <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="email">Email address</nz-form-label>
+            <nz-form-control [nzSpan]="14">
+              <input nz-input name="email">
+            </nz-form-control>
+          </nz-form-item >
+          <nz-form-item>
+            <nz-form-label [nzSpan]="6" nzFor="questions">Questions,comments or<br> concerns</nz-form-label>
+            <nz-form-control [nzSpan]="14" >
+              <input nz-input name="questions" style="height: 20vh;">
+            </nz-form-control>
+          </nz-form-item >
+          <div class="submit_button">
+          <nz-form-item nz-row class="submit">
+            <nz-form-control [nzSpan]="14" [nzOffset]="12">
+              <button nz-button nzType="primary">Submit</button>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </form>
+</div>

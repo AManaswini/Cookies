@@ -1,0 +1,73 @@
+.rec {
+    padding-top: 30px;
+    padding-left: 10%;
+}
+.cupcakes {
+    width: 100%;
+    opacity: 0.75;
+}
+.intro {
+    position: absolute;
+    top: 25vh;
+    left: 10%;
+}
+.intro_title {
+    font-size: 40px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+    color: #152340;
+}
+.intro_subtitle {
+    width: 90%;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    color: #152340;
+}
+.view_recipe {
+    width: 80%;
+    height: 40px;
+    background-color: #152340;
+    border-width: 0ch;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 12px;
+}
+.product-item .product-item-content {
+    border-radius: 3px;
+    margin: .6rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.product-item .product-image {
+    width: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+}
+.recc{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.third, .second{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 70px;
+}
+.img__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.img__img:hover {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+.img__description {
+    padding-top: 20px;
+    text-align: center;
+}

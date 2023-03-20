@@ -1,0 +1,80 @@
+<div class="title">
+    <div class="left">
+        <h2>{{this.name}}</h2>
+        <div class="time">
+            Active Time:  26-30 Min<br>
+            Full Time:  40-45 Min<br>
+            <nz-rate [ngModel]="3" nzAllowHalf></nz-rate>
+            Difficulty
+        </div>
+        <div class="description">
+            {{this.desc}}
+        <!-- The basic pancake is made from a simple batter of eggs, flour, milk
+        and baking powder for leavening. You can use different types of flour if
+        you want to experiment with whole wheat or buckwheat. And you can also add fruit to the mixture.
+        The batter can be made from scratch in about the same time it takes to make toast. The most time-consuming part of making pancakes, of course, is cooking them. But that time is so short you should consider these an everyday convenience food, not a special-occasion feast. Cook this recipe a few times and it may become part of your weekly routine. -->
+        </div>
+        <h3><b>User Preferences: </b> <nz-switch [(ngModel)]="switchValue"></nz-switch> </h3>
+    </div>
+    <div class="right">
+        <!-- <img src="assets/choco.jpg" /> -->
+        <img src = {{this.img}} alt = "image not found" class="recipe_image">
+        <br>
+        ⚠ Baked good may appear different than picture
+    </div>
+</div>
+<div class="second">
+    Blurb about using the fucntions below!!! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc pellentesque elementum porta. Ut finibus ultrices urna, vel fringilla justo interdum eu.
+    Integer venenatis laoreet interdum.
+</div>
+<div class="forth">
+    <div class="recommended">
+        <h2>Recommended substitutions</h2>
+        <div class="reco-text">
+            <ul style="list-style-type:none;margin: 0; padding: 0;">
+                <li style="margin: 10px 0;" *ngFor="let item of this.substitutions"><input type="checkbox" id={{item}}>{{ item }}</li>
+            </ul>
+        </div>
+        <button nz-button nzType="primary" class="view_recipe">
+            <a (click)="apply()"><h3>Apply substitutions <i nz-icon  nzTheme="outline"></i></h3></a>
+        </button>
+        <div class="substitutions">
+            <h2>Substitutions made</h2>
+        </div>
+    </div>
+</div>
+<div class="third">
+    <div class ="ingrediants">
+        <h2>Ingrediants</h2>
+        <ul  style="list-style-type: none;margin: 0; padding: 0;">
+            <li style="margin: 10px 0;" *ngFor="let item of this.recipiedata"><input type="checkbox" name="myCheckbox" value="myValue"> {{ item }}</li>
+        </ul>
+    </div>
+    <div class="steps">
+        <h2>Directions</h2>
+        <ul style="list-style-type:decimal;margin: 0; padding: 0;">
+            <!-- <li> step {{i}}</li> -->
+            <li style="margin: 10px 0;" *ngFor="let item of this.recipesteps">{{ item }}</li>
+        </ul>
+    </div>
+
+</div>
+<!-- <div class="first">
+    <div nz-row nzJustify="space-around">
+        <div nz-col [nzSpan]="14">
+            <h1> Choco Chip Cookies</h1>
+            <h4>A chocolate chip cookie is a drop cookie that features chocolate chips or chocolate morsels as its distinguishing ingredient. Chocolate chip cookies originated in the United States around 1938, when Ruth Graves Wakefield chopped up a Nestlé semi-sweet chocolate bar and added the chopped chocolate to a cookie recipe.
+                Generally, the recipe starts with a dough composed of flour, butter, both brown and white sugar, semi-sweet chocolate chips, eggs, and vanilla. Variations on the recipe may add other types of chocolate, as well as additional ingredients such as nuts or oatmeal. There are also vegan versions with the necessary ingredient substitutions, such as vegan chocolate chips, vegan margarine, and egg substitutes. A chocolate chocolate chip cookie uses a dough flavored with chocolate or cocoa powder, before chocolate chips are mixed in. These variations of the recipe are also referred to as double or triple chocolate chip cookies, depending on the combination of dough and chocolate types.</h4>
+        
+            <h3><b>Active Time: </b> 26-30 min</h3>
+            <h3><b>Difficulty : </b> 
+                <nz-rate [ngModel]="5" nzAllowHalf></nz-rate>
+            </h3>
+            <br>
+            <h3><b>User Preferences: </b> <nz-switch [(ngModel)]="switchValue"></nz-switch> </h3>
+        </div>
+        <div nz-col [nzSpan]="8">
+            <img src="assets/choco.jpg" />
+        </div>
+    </div>
+</div> -->

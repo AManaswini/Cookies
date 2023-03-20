@@ -1,0 +1,95 @@
+<div class="first">
+    <!-- <div class="rec">
+        <h1>Top Categories</h1>
+    </div>
+    <div class="recc">
+        <div nz-row nzJustify="space-between">
+            <div *ngFor="let category of categories" class="rec_item">
+                <div nz-col class="rec_item_content" nzSpan="4" >
+                    <div class="img__wrap">
+                        <img nz-image class="img__img"
+                            src="{{category.image}}"
+                            alt="{{category.name}}">
+                    </div>
+                </div>
+                <h3 class="img__description">{{category.name}}</h3>
+            </div>
+        </div>
+    </div> -->
+    <img [src]="titleImage" alt="Cupcakes" class="cupcakes">
+    <div class="intro">
+        <h1 class="intro_title">
+            Explore our recipies
+        </h1>
+        <h3 class="intro_subtitle">
+            Filter through our various categories and edit your recipe to your baking needs!
+        </h3>
+    </div>
+</div>
+<div class="second">
+    <div nz-row nzJustify="start">
+        <div nz-col nzSpan="12">
+            <button nz-button nzType="primary" nzSize="large">Filters</button>
+        </div>
+        <div nz-col nzSpan="12">
+            <h1>User Preferences <nz-switch [(ngModel)]="switchValue"></nz-switch> </h1>
+        </div>
+    </div>
+</div>
+<div class="third">
+    <div class="rec">
+        <h1>Featured recipes</h1>
+    </div>
+    <hr>
+    <div class="rec_carousel_2">
+        <p-carousel [value]="editors_picks" [numVisible]="4" [numScroll]="1" [autoplayInterval]="2000" [circular]="true" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Featured" nzPlacement="start" nzColor="#152340">
+                            <nz-card
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate>
+                            <img alt="example" src="assets/red.jpg" />
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipie <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<!-- <div class="third">
+    <div nz-row nzJustify="center" *ngIf="editors_picks">
+        <div nz-col nzSpan="6" *ngFor="let recipe of editors_picks; let i=index;">
+            <nz-card style="width:80%;" [nzCover]="coverTemplate" [nzActions]="[showRecipe]">
+            <nz-card-meta
+                class="title"
+                nzTitle={{recipe.name}}
+                nzDescription="This is the description"
+            ></nz-card-meta>
+            </nz-card>
+            <ng-template #coverTemplate>
+                <img alt="example" src="assets/choco.jpg" />
+            </ng-template>
+            <ng-template #showRecipe>
+                <a (click)="goToRecipe(i)"><h3>Show Recipe <i nz-icon nzType="caret-right" nzTheme="outline"></i></h3></a>
+            </ng-template>
+        </div>
+    </div>
+</div> -->

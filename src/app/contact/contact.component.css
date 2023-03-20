@@ -1,0 +1,16 @@
+.form{
+    background-color: #F2BFAC;
+    height:60vh;
+    margin-top: 5%;
+    margin-left: 6%;
+    margin-right: 6%;
+    padding: 5%;
+}
+.header{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.subtext{
+    margin-top:2%
+}

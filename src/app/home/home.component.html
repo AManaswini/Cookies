@@ -1,0 +1,212 @@
+<div class="first">
+    <img [src]="titleImage" alt="Cupcakes" class="cupcakes">
+    <div class="intro">
+        <h1 class="intro_title">
+            The Cookies Project
+        </h1>
+        <h3 class="intro_subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </h3>
+    </div>
+</div>
+<div class="second">
+    <h1 class="bake">Not sure what to bake?</h1>
+    <button nz-button nzType="primary" class="clickhere">Click here!</button>
+</div>
+<div class="third">
+    <div class="rec">
+        <h1>Top Recommendations</h1>
+    </div>
+    <hr>
+    <div class="rec_carousel">
+        <p-carousel [value]="recommended_recipes" [numVisible]="2" [numScroll]="1" [autoplayInterval]="2000" [circular]="true" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Top Recommended" nzPlacement="start" nzColor="#152340">
+                            <nz-card
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate  style="width:100%;height: 80%;">
+                            <!-- <img alt="example" src= "assets/choco.jpg"/> -->
+                            <img alt="loading" src="{{recipe.titleimage}}"  height="500px">
+                            
+                            <!-- "assets/choco.jpg" -->
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipe <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="fourth">
+    <div class="rec">
+        <h1>Editor's Picks</h1>
+    </div>
+    <hr>
+    <div class="rec_carousel_2">
+        <p-carousel [value]="editors_picks" [numVisible]="3" [numScroll]="1" [autoplayInterval]="2000" [circular]="true" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Editor's Pick" nzPlacement="start" nzColor="#152340">
+                            <nz-card
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate  style="width:100%;height: 80%;">
+                            <img alt="loading" src="{{recipe.titleimage}}" height="400px">
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipe <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="fifth">
+    <div class="rec">
+        <h1>Popular Vegan Recipes</h1>
+    </div>
+    <hr>
+    <div class="rec_carousel_2">
+        <p-carousel [value]="vegan_recipies" [numVisible]="3" [numScroll]="1" [autoplayInterval]="2000" [circular]="false" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Editor's Pick" nzPlacement="start" nzColor="#152340">
+                            <nz-card 
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate  style="width:100%;height: 80%;">
+                            <!-- <img alt="example" src="assets/red.jpg" /> -->
+                            <img alt="loading" src="{{recipe.titleimage}}" height="400px">
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipe <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="sixth">
+    <div class="rec">
+        <h1>Gluten Free Options</h1>
+    </div>
+    <hr>
+    <div class="rec_carousel_2">
+        <p-carousel [value]="gluten_free_recipes" [numVisible]="3" [numScroll]="1" [autoplayInterval]="2000" [circular]="false" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Editor's Pick" nzPlacement="start" nzColor="#152340">
+                            <nz-card
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate  style="width:100%;height: 80%;">
+                            <img alt="loading" src="{{recipe.titleimage}}" height="400px">
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipe <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="seventh">
+    <h1 class="ing_week">Ingredient of the week: {{this.ingrediant}}</h1>
+</div>
+<div class="eighth">
+    <div class="rec_carousel_2">
+        <p-carousel [value]="ingrediant_of_the_week" [numVisible]="3" [numScroll]="1" [autoplayInterval]="2000" [circular]="false" >
+            <ng-template let-recipe pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <nz-ribbon nzText="Editor's Pick" nzPlacement="start" nzColor="#152340">
+                            <nz-card
+                                    [nzCover]="coverTemplate" 
+                                    [nzActions]="[showRecipe]"
+                                    [nzHoverable]="true">
+                                <nz-card-meta
+                                    class="title"
+                                    nzTitle={{recipe.name}}
+                                    nzDescription={{recipe.description}}
+                                ></nz-card-meta>
+                            </nz-card>
+                        </nz-ribbon>
+                        
+                        <ng-template #coverTemplate  style="width:100%;height: 80%;">
+                            <img alt="loading" src="{{recipe.titleimage}}" height="400px">
+                        </ng-template>
+                        <ng-template #showRecipe>
+                            <button nz-button nzType="primary" class="view_recipe">
+                                <a (click)="goToRecipe(recipe.name)"><h3>View Recipe <i nz-icon nzType="arrow-right" nzTheme="outline"></i></h3></a>
+                            </button>
+                            
+                        </ng-template>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="footer">
+    <br>
+    <br>
+</div>
